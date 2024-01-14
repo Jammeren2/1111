@@ -1,0 +1,66 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"> 
+        <meta http-equiv="Pragma" content="no-cache"> 
+        <meta http-equiv="Expires" content="0"> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Mineflayer Control Panel</title>         
+        <script src="/socket.io/socket.io.js"></script>         
+        <script src="https://www.google.com/jsapi"></script>         
+        <link rel="stylesheet" href="styles.css"> 
+    </head>     
+    <body> 
+        <div class="container"> 
+            <div class="header"> 
+                <h1>Dashboard</h1> 
+            </div>             
+            <div class="content">
+                <div class="content">
+                    <h4 for="playerNumberInput">Номер комноты:</h4> 
+                    <input type="number" id="playerNumberInput" placeholder="Введите номер комнты" />
+                </div>
+                <div class="content">
+                    <h3 for="playerNameInput">Имя игрока:</h3> 
+                </div>
+                <input type="text" id="playerNameInput" placeholder="Введите ник игрока" />
+                <div class="content">
+                    <button id="changePlayerButton" class="gradient-button">Изменить ник</button>
+                </div>                &nbsp;
+            </div>                          
+            <div class="content">
+                <button id="startButton" class="gradient-button">Start</button>
+                <button id="stopButton" class="gradient-button">Stop</button>
+                <div class="content"> 
+                    <h>Игроков онлайн: 
+                        <span id="onlinePlayersCount">0</span>
+                    </h>                     
+                </div>                 
+            </div>                          
+            <!-- Консоль -->             
+            <div id="console_block" class="rounded-lg p-4 box-sizing bg-base-300">
+                <div id="console" class="console_box my-2"> 
+                    <!-- Здесь будут отображаться сообщения в консоли -->                     
+                    <div class=""> 
+                        <p> <span style="color: rgb(187, 187, 0)">[Cистема]: </span> 
+            || Авторизация прошла успешно ||</p> 
+                    </div>                     
+                    <!-- Добавьте другие сообщения, если необходимо -->                     
+                </div>                 
+                <div class="flex w-full justify-between items-center mb-2"> 
+                    <!-- Добавьте другие элементы, если необходимо -->                     
+                </div>                 
+                <div class="inp_command"> 
+                    <input type="text" placeholder="Чтобы отправить команду, нажмите Enter" class="input w-full border-none" id="command"> 
+                    <!-- Добавьте другие элементы, если необходимо -->                     
+                </div>                 
+            </div>             
+        </div>
+        <div id="graph" style="height: 500px;">
+            <div></div>
+        </div>         
+        <script src="https://www.google.com/jsapi"></script>         
+        <script src="client.js"></script>         
+    </body>     
+</html>
